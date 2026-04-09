@@ -9,7 +9,7 @@ The objective is to predict the difference between outdoor and indoor Particulat
 ## Data Source & Sensor Fusion
 
 ### 1. Outdoor Sensors (MINTS-AI Lab, UT Dallas)
-* **Pierra IPS7100**: Measures PM density (micrograms/m^3) and particle count (counts/m^3) for 7 size bins: PM0.1, PM0.3, PM0.5, PM1, PM2.5, PM5, and PM10.
+* **Pierra IPS7100**: Measures PM density (micrograms/m<sub>3</sub>) and particle count (counts/m^3) for 7 size bins: PM0.1, PM0.3, PM0.5, PM1, PM2.5, PM5, and PM10.
 * **BME280**: Air temperature, pressure, humidity, and dewpoint.
 * **RG15**: Rainfall intensity.
 * **AIRMAR**: Ultrasonic wind speed, direction, and secondary meteorological data.
