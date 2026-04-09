@@ -37,25 +37,67 @@ The objective is to predict the difference between outdoor and indoor Particulat
 
 ## Repository Structure
 
-* `/data`: Raw and processed datasets (10min averaged and lag-adjusted).
-* `/src`: Python scripts for data cleaning, lag analysis, and XGBoost training.
-* `/output`: Resulting dataframes and performance metrics.
-* `/plots`: Visualizations including lag correlations, feature importance, and predicted vs. actual PM levels.
+```
+IndoorOutdoorStudy/
+├── Code/
+│   └── googleColab_GPUoptimized/
+│       └── Indoor_Outdoor.ipynb          # Main GPU-optimized Google Colab notebook
+├── Data/
+│   └── MintsData/
+│       └── Indoor/
+│           ├── 001e064a1520/             # ⚠️ Outdoor sensor data (MINTS-AI Lab node)
+│           │   └── combinedValo01Data.csv
+│           ├── 70b3d540f40ce420/         # Indoor sensor 01
+│           │   └── 70b3d540f40ce420_combined.csv
+│           ├── 70b3d540f40ce421/         # Indoor sensor 02
+│           ├── 70b3d540f40ce422/         # Indoor sensor 03
+│           ├── 70b3d540f40ce423/         # Indoor sensor 04
+│           ├── 70b3d540f40ce424/         # Indoor sensor 06
+│           ├── 70b3d540f40ce425/         # Indoor sensor 07
+│           ├── 70b3d540f40ce426/         # Indoor sensor 08
+│           ├── 70b3d540f40ce427/         # Indoor sensor 09
+│           ├── 70b3d540f40ce429/         # Indoor sensor 10
+│           ├── 70b3d540f40ce42d/         # Indoor sensor 11
+│           ├── 70b3d540f40ce42f/         # Indoor sensor 12
+│           ├── 70b3d540f40ce430/         # Indoor sensor 13
+│           ├── 70b3d540f40ce433/         # Indoor sensor 14
+│           ├── 70b3d540f40ce434/         # Indoor sensor 15
+│           ├── 70b3d540f40ce435/         # Indoor sensor 16
+│           ├── 70b3d540f40ce436/         # Indoor sensor 17
+│           ├── 70b3d540f40ce438/         # Indoor sensor 18
+│           ├── 70b3d540f40ce43a/         # Indoor sensor 19
+│           ├── 70b3d540f40ce43b/         # Indoor sensor 20
+│           ├── 70b3d540f40ce43c/         # Indoor sensor 21
+│           └── valo_cross_correlation_results.csv
+└── Results/
+    ├── PM1.0/
+    │   ├── allParameters_PM1/            # Heatmaps & CSVs using all outdoor features
+    │   └── top10_PM1/                    # Per-sensor plots using top-10 features
+    ├── PM2.5/
+    │   ├── allParameters_PM2.5/
+    │   └── top10_PM2.5/
+    └── PM10.0/
+        ├── allParameters_PM10.0/
+        └── top10_PM10.0/
+```
+
+> **Note on data placement**: The folder `001e064a1520` resides inside `Data/MintsData/Indoor/` for organizational convenience, but it contains **outdoor** sensor data collected by the MINTS-AI Lab node. All `70b3d540f40ce4xx` folders contain **indoor** sensor data.
 
 ## Requirements
 
-* Python 3.x
+* Python 3.x (Google Colab environment recommended)
 * `xgboost`
 * `pandas`
 * `numpy`
 * `matplotlib` / `seaborn`
-* `scipy` (for lag analysis)
+* `scipy` (for lag/cross-correlation analysis)
 
 ## Usage
 
-1.  **Preprocessing**: Run `data_alignment.py` to downsample outdoor data and apply the specific time-lags for the 20 indoor sensors.
-2.  **Training**: Execute `train_xgboost.py` to generate the predictive models for each PM bin.
-3.  **Visualization**: Use `plot_results.py` to generate the analysis charts found in the `/plots` directory.
+1.  **Open the notebook**: Load `Code/googleColab_GPUoptimized/Indoor_Outdoor.ipynb` in Google Colab (GPU runtime recommended).
+2.  **Point to data**: Ensure `Data/MintsData/Indoor/` is accessible (e.g., mount Google Drive or upload the folder).
+3.  **Run all cells**: The notebook handles data loading, downsampling, lag analysis, XGBoost training, and result export in sequence.
+4.  **Outputs**: Model metrics, feature-importance CSVs, and visualization plots are saved to the corresponding `Results/PM*/` subfolders.
 
 ## Acknowledgments
 Special thanks to the **MINTS-AI Lab at UT Dallas** for providing the outdoor sensor infrastructure and the management at **Richardson IQHQ** for facility access.
