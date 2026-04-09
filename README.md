@@ -4,7 +4,7 @@ This repository contains the data, source code, and analysis for a machine learn
 
 ## Project Overview
 
-The objective is to predict the difference between outdoor and indoor Particulate Matter (PM) concentrations (Delta PM = PM<sub>Outdoor</sub> - PM<sub>Indoor</sub>). By leveraging high-fidelity outdoor sensor arrays and machine learning (XGBoost), we aim to understand how outdoor pollutants penetrate or are mitigated by advanced building filtration systems.
+The objective is to predict the difference between outdoor and indoor Particulate Matter (PM) concentrations ($\Delta$ PM = PM<sub>Outdoor</sub> - PM<sub>Indoor</sub>). By leveraging high-fidelity outdoor sensor arrays and machine learning (XGBoost), we aim to understand how outdoor pollutants penetrate or are mitigated by advanced building filtration systems.
 
 ## Data Source & Sensor Fusion
 
@@ -19,7 +19,7 @@ The objective is to predict the difference between outdoor and indoor Particulat
 ### 2. Indoor Sensors
 * **Network**: 20 indoor sensors distributed throughout the IQHQ building.
 * **Resolution**: 10-minute intervals.
-* **Metrics**: PM1, PM2.5, and PM10 concentrations.
+* **Metrics**: PM<sub>1.0</sub>, PM<sub>2.5</sub>, and PM<sub>10.0</sub> concentrations.
 
 ## Methodology
 
@@ -31,9 +31,9 @@ The objective is to predict the difference between outdoor and indoor Particulat
 ### Machine Learning
 * **Model**: XGBoost (Extreme Gradient Boosting) in Python.
 * **Target Variables**: 
-    * Delta PM_1
-    * Delta PM_2.5
-    * Delta PM_10
+    * $\Delta$ PM<sub>1.0</sub>
+    * $\Delta$ PM<sub>2.5</sub>
+    * $\Delta$ PM<sub>10.0</sub>
 
 ## Repository Structure
 
