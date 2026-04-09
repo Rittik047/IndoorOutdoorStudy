@@ -4,12 +4,12 @@ This repository contains the data, source code, and analysis for a machine learn
 
 ## Project Overview
 
-The objective is to predict the difference between outdoor and indoor Particulate Matter (PM) concentrations (Delta PM = PM_outdoor - PM_indoor). By leveraging high-fidelity outdoor sensor arrays and machine learning (XGBoost), we aim to understand how outdoor pollutants penetrate or are mitigated by advanced building filtration systems.
+The objective is to predict the difference between outdoor and indoor Particulate Matter (PM) concentrations ($\Delta$ PM = PM<sub>Outdoor</sub> - PM<sub>Indoor</sub>). By leveraging high-fidelity outdoor sensor arrays and machine learning (XGBoost), we aim to understand how outdoor pollutants penetrate or are mitigated by advanced building filtration systems.
 
 ## Data Source & Sensor Fusion
 
 ### 1. Outdoor Sensors (MINTS-AI Lab, UT Dallas)
-* **Pierra IPS7100**: Measures PM density (micrograms/m^3) and particle count (counts/m^3) for 7 size bins: PM0.1, PM0.3, PM0.5, PM1, PM2.5, PM5, and PM10.
+* **Pierra IPS7100**: Measures PM density (micrograms/m<sup>3</sup>) and particle count (counts/m<sup>3</sup>) for 7 size bins: PM<sub>0.1</sub> , PM<sub>0.3</sub> , PM<sub>0.3</sub> , PM<sub>1.0</sub> , PM<sub>2.5</sub> , PM<sub>5.0</sub> , and PM<sub>10.0</sub> .
 * **BME280**: Air temperature, pressure, humidity, and dewpoint.
 * **RG15**: Rainfall intensity.
 * **AIRMAR**: Ultrasonic wind speed, direction, and secondary meteorological data.
@@ -19,7 +19,7 @@ The objective is to predict the difference between outdoor and indoor Particulat
 ### 2. Indoor Sensors
 * **Network**: 20 indoor sensors distributed throughout the IQHQ building.
 * **Resolution**: 10-minute intervals.
-* **Metrics**: PM1, PM2.5, and PM10 concentrations.
+* **Metrics**: PM<sub>1.0</sub>, PM<sub>2.5</sub>, and PM<sub>10.0</sub> concentrations.
 
 ## Methodology
 
@@ -31,9 +31,9 @@ The objective is to predict the difference between outdoor and indoor Particulat
 ### Machine Learning
 * **Model**: XGBoost (Extreme Gradient Boosting) in Python.
 * **Target Variables**: 
-    * Delta PM_1
-    * Delta PM_2.5
-    * Delta PM_10
+    * $\Delta$ PM<sub>1.0</sub>
+    * $\Delta$ PM<sub>2.5</sub>
+    * $\Delta$ PM<sub>10.0</sub>
 
 ## Repository Structure
 
