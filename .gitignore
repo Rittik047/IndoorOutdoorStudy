@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Data files (raw sensor CSVs can be large; only committed if explicitly added)
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Generated outputs (models, plots, lag results, merged CSV)
+output/models/*
+output/plots/*
+output/metrics/*
+data/lag_results/*
+!output/models/.gitkeep
+!output/plots/.gitkeep
+!output/metrics/.gitkeep
+!data/lag_results/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
