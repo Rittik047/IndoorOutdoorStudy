@@ -19,7 +19,7 @@ The objective is to predict the difference between outdoor and indoor Particulat
 ### 2. Indoor Sensors
 * **Network**: 20 indoor sensors distributed throughout the IQHQ building.
 * **Resolution**: 10-minute intervals.
-* **Metrics**: PM<sub>1.0</sub>, PM<sub>2.5</sub>, and PM<sub>10.0</sub> concentrations.
+* **Metrics**: PM<sub>1.0</sub>, PM<sub>2.5</sub>, and PM<sub>10.0</sub> concentrations(($\mu$ g/m<sup>3</sup>))
 
 ## Methodology
 
