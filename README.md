@@ -9,7 +9,7 @@ The objective is to predict the difference between outdoor and indoor Particulat
 ## Data Source & Sensor Fusion
 
 ### 1. Outdoor Sensors (MINTS-AI Lab, UT Dallas)
-* **Pierra IPS7100**: Measures PM density ($\mu$ g/m<sup>3</sup>) and particle count (counts/Litre) for 7 size bins: PM<sub>0.1</sub> , PM<sub>0.3</sub> , PM<sub>0.3</sub> , PM<sub>1.0</sub> , PM<sub>2.5</sub> , PM<sub>5.0</sub> , and PM<sub>10.0</sub> .
+* **Pierra IPS7100**: Measures PM density ($\mu$ g/m<sup>3</sup>) and particle count (counts/Litre) for 7 size bins: PM<sub>0.1</sub> , PM<sub>0.3</sub> , PM<sub>0.3</sub> , PM<sub>1,0</sub> , PM<sub>2.5</sub> , PM<sub>5.0</sub> , and PM<sub>10.0</sub> .
 * **BME280**: Air temperature, pressure, humidity, and dewpoint.
 * **RG15**: Rainfall intensity.
 * **AIRMAR**: Ultrasonic wind speed, direction, and secondary meteorological data.
@@ -25,7 +25,7 @@ The objective is to predict the difference between outdoor and indoor Particulat
 
 ### Data Processing Pipeline
 1.  **Downsampling**: Outdoor data (1-second resolution) was time-averaged to a **10-minute resolution** to match the indoor sensor frequency.
-2.  **Lag Analysis**: To account for the time it takes for outdoor air to affect indoor environments, a sensor-by-sensor lag analysis was performed for each PM bin (PM1, PM2.5, PM10).
+2.  **Lag Analysis**: To account for the time it takes for outdoor air to affect indoor environments, a sensor-by-sensor lag analysis was performed for each PM bin (PM<sub>2.5</sub>, PM<sub>2.5</sub>, PM<sub>10.0</sub>).
 3.  **Feature Engineering**: Integration of spectral solar data, meteorological conditions, and calculated solar angles as predictors.
 
 ### Machine Learning
